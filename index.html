@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Quotes</title>
+    
+    <link rel="stylesheet" type="text/css" href="style/stylesheet.css">
+    
+    <script src="js/vue.js"></script>
+    
+    <script src="js/js.js"></script>
+    
+    <!-- Google fonts -->
+    
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+    
+        
+</head>
+    
+<body>
+ 
+    <div id="bubbles">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        
+
+        <div id="app">
+    
+        <div class="wrapper">
+        
+        <header class="main-head fadein"><h1>Random Quotes</h1></header>
+        
+        <div class="content">
+            
+             <p transition="fadeIn" id="svar"></p>
+            
+        </div> 
+
+        
+        <footer class="main-footer">
+        
+            <button class="button" v-on:click="click">Quote Me!</button>
+            
+            <audio ref="audio" src="Click2-Sebastian-759472264%20(mp3cut.net).mp3">
+            
+        </footer>
+            
+        </div>
+            
+        </div>
+            
+    </div>
+        
+    </body>    
+    
+    <script>
+        
+        
+        new Vue({
+          el: '#app',
+           data: {
+            answer: [
+                "Success is most often achieved by those who don't know that failure is inevitable - Coco Chanel",
+
+                "Courage is grace under pressure. - Ernest Hemingway",
+
+                "Don't cry because its over, smile because it happened. - Dr. Seuss",
+
+                "Live as if you were to die tomorrow. Learn as if you were to live forever. - Mahatma Gandhi",
+
+                "I believe every human has a finite number of heartbeats. I don't intend to waste any of mine. - Neil Armstrong",
+
+                "A goal is not always meant to be reached, it often serves simply as something to aim at. - Bruce Lee",
+
+                "The difference between winning and losing is most often not quitting. - Walt Disney",
+
+                "If your actions inspire others to dream more, learn more, do more, and become more, you are a leader. - John Quincy Adams",
+
+                "It is never too late to be what you might have been. - George Eliot",
+
+                "Great minds discuss ideas; average minds discuss events; small minds discuss people. - Eleanor Roosevelt",
+
+                "It does not matter how slowly you go, so long as you do not stop. - Confucius",
+
+                "If your'e going through hell, keep going. - Winston Churchill",
+
+                "What seems to us as bitter trials are often blessings in disguise. - Oscar Wilde",
+
+                "The longer I live, the more beautiful life becomes. - Frank Lloyd Wright",
+
+                "Success is the sum of small efforts, repeated day-in and day-out. - Robert Collier",
+
+                "Only put off until tomorrow what you are willing to die having left undone. - Pablo Picasso",
+
+                "Do one thing every day that scares you. - Eleanor Roosevelt",
+
+                "Keep your face to the sunshine and you can never see the shadow. - Helen Keller",
+
+                "One of the greatest diseases is to be nobody to anybody. - Mother Teresa",
+
+                "The successful warrior is the average man, with laser-like focus. - Bruce Lee",
+
+                "Be yourself. Everyone else is already taken. - Oscar Wilde"
+
+                    ],
+
+                },
+    
+    
+          methods: {
+
+            click: function () {
+            this.$refs.audio.play();
+            this.$refs.audio.currentTime=0;
+            var random = this.answer[Math.floor(Math.random() * this.answer.length)];
+            document.getElementById("svar").innerHTML = random;
+
+                                }  
+                    }
+            })
+        
+        </script>   
+    
+</html>
+
+
